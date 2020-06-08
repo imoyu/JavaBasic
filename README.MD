@@ -1,3 +1,1 @@
-#### 泛型的基本使用
-
-[Generic/src/com/basicjava/generic](https://github.com/yinut/JavaBasic/tree/master/Generic/src/com/basicjava/generic)
+#### 泛型的基本使用 [Generic/src/com/basicjava/generic](https://github.com/yinut/JavaBasic/tree/master/Generic/src/com/basicjava/generic)
