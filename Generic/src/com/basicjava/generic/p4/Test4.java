@@ -10,6 +10,7 @@ public class Test4 {
 
         System.out.println(func3().t.getClass());
         System.out.println(func4().t.getClass());
+        System.out.println(func5().t.getClass());
 
         Integer i = (Integer) new Object();
         System.out.println(i.getClass());
@@ -57,9 +58,36 @@ public class Test4 {
 
     }
 
+    public static Generate<?> func5() {
+
+        if (new Random().nextBoolean())
+            return Generate.success(new Integer(12));
+        else
+            return Generate.success("ds");
+
+    }
+
+    public static <T> Generate<T> func6(Class<T> clazz) throws IllegalAccessException, InstantiationException {
+        T t = clazz.newInstance();
+        return new Generate<>(t);
+    }
 }
 
 class Generate<T> {
+
+    private T tt;
+
+    protected Generate() {
+
+    }
+
+    protected Generate(T tt) {
+        this.tt = tt;
+    }
+
+    public static <E> Generate<E> success(E e) {
+        return new Generate<>(e);
+    }
 
     T t = (T) new Object();
 
