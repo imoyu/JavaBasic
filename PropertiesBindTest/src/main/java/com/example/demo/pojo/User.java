@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
 
 // 这样写绑定不到配置文件
-// @PropertySource 要和 注册进容器的注解在一起
+// @PropertySource 要和 注册进容器的注解在一起，目前绑定不到
 @PropertySource(value = {"classpath:user.properties"})
 @ConfigurationProperties(prefix = "user")
 public class User {
