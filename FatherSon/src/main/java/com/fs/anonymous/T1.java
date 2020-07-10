@@ -32,5 +32,11 @@ public class T1 {
         child.childeat();  // childeat ------
         System.out.println(child.a); // 1
         System.out.println(child.b); // 2
+
+        Person p = new Child();
+
+        System.out.println(p instanceof Person); // true
+        System.out.println(p instanceof Child); // true
+        System.out.println(p instanceof CC); // false
     }
 }
