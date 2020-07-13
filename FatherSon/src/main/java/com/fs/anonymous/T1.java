@@ -38,5 +38,12 @@ public class T1 {
         System.out.println(p instanceof Person); // true
         System.out.println(p instanceof Child); // true
         System.out.println(p instanceof CC); // false
+
+        long l;
+        char c = 'd';
+        l = c;
+
+        double d1 = -1.0;
+        System.out.println(d1 < Double.MIN_VALUE);
     }
 }
