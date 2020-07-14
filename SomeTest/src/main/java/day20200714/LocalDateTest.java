@@ -34,7 +34,6 @@ public class LocalDateTest {
         System.out.println(CNDateTime);
 
         System.out.println(LocalDate.parse("2017-09:09").getMonthValue());
-        // 冲突 本地 ---
     }
 
 }
