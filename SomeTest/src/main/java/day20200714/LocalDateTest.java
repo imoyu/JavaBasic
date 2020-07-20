@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class LocalDateTest {
 
@@ -33,7 +34,9 @@ public class LocalDateTest {
         // 2017年09月19日 12时45分43秒 星期二
         System.out.println(CNDateTime);
 
-        System.out.println(LocalDate.parse("2017-09:09").getMonthValue());
+//        System.out.println(LocalDate.parse("2017-09:09").getMonthValue());   // DateTimeParseException
+
+        System.out.println("输出：" + (new Random().nextBoolean() ? "true" : "false"));
     }
 
 }
