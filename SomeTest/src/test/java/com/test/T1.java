@@ -15,9 +15,23 @@ public class T1 {
         Integer e = null;
         Random r = new Random();
         a = r.nextBoolean() ? c : d;
-//        a = r.nextBoolean() ? c : e;   // 可能报错
+//        a = r.nextBoolean() ? c : e;   // false 报错
         b = r.nextBoolean() ? c : d;
-        b = r.nextBoolean() ? c : e;
+//        b = r.nextBoolean() ? c : e;   // false 报错
+
+        String s = "ds";
+
+        switch (s) {
+            case "a" :
+                System.out.println(1);
+                break;
+            case "ds" :
+                System.out.println(2);
+                break;
+            default:
+                System.out.println("d");
+        }
+
     }
 
 }
