@@ -2,6 +2,11 @@ package com.test;
 
 import org.junit.Test;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -64,7 +69,34 @@ public class T1 {
         // matcher使用matches()方法后就失效了，不能再使用find取值：
         System.out.println(matcher.matches());         // --> false
 
-//        matcher.find();
+        matcher.find();
         System.out.println(matcher.group(0));      // --> s2   r2    d4
+
+        Pattern p = Pattern.compile("p");
+        Matcher m1 = p.matcher("P");
+        System.out.println(m1.matches());
+    }
+
+    @Test
+    public void testDate() throws ParseException {
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = dateFormat.parse("2020-12-12 大厦 12:01");
+        System.out.println(date);// 不报错
+
+        LocalDateTime localDate = LocalDateTime.parse("2020-12-12 12:01", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        System.out.println(localDate);// 报错
+    }
+
+    @Test
+    public void testClass() {
+
+        funClass(Date.class);
+
+    }
+
+    private static <T> void funClass(Class<T> clazz) {
+        System.out.println(clazz.getName());
+        System.out.println();
     }
 }

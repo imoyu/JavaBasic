@@ -17,6 +17,10 @@ public class Test4 {
     }
 
     // 1. 方法泛型是指作用在方法上的 T，后面 返回值，入参，入参的泛型等地方都能使用这个 T
+    // T 的确定：
+    //           1) 普通泛型，由 new 一个类时，类后面的 <T> 确定
+    //           2) 方法泛型，由方法参数里的 T 决定
+    //           3) T 只能用于声明变量 `T t = ...;` √, 不能用于调用方法 T.class X
     public <T> T genericMethod(Class<T> tClass) throws IllegalAccessException, InstantiationException {
         T t = tClass.newInstance();
         return t;
