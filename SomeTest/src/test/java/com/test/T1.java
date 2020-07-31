@@ -99,4 +99,45 @@ public class T1 {
         System.out.println(clazz.getName());
         System.out.println();
     }
+
+    @Test
+    public void test() {
+
+        String year = null;
+        String month = null;
+        String day = null;
+        String hour = null;
+        String minute = null;
+
+        Pattern p1 = Pattern.compile("\\d{4}");
+        Pattern p2 = Pattern.compile("\\d{1,2}");
+        String arrivalTime = "2019/12/3 12:22:45";
+        Matcher m1 = p1.matcher(arrivalTime);
+        if (m1.find()) {
+            year = m1.group();
+            arrivalTime = m1.replaceAll("");
+        }
+        Matcher m2 = p2.matcher(arrivalTime);
+        int index = 0;
+        while (m2.find()) {
+            index ++;
+            switch (index) {
+                case 1:
+                    month = m2.group();
+                    break;
+                case 2:
+                    day = m2.group();
+                    break;
+                case 3:
+                    hour = m2.group();
+                    break;
+                case 4:
+                    minute = m2.group();
+            }
+        }
+        if (year != null && (index == 2 || index == 4 || index == 5)) {
+            System.out.printf("%s年%s月%s日%s时%s分%n", year, month, day, hour, minute);
+        }
+
+    }
 }
