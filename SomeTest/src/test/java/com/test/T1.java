@@ -101,7 +101,7 @@ public class T1 {
     }
 
     @Test
-    public void test() {
+    public void testRegex2() {
 
         String year = null;
         String month = null;
