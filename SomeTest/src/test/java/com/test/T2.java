@@ -55,8 +55,13 @@ public class T2 {
         new T2().stringFormatTest();
     }
 
+    public static String MESSAGE = "no message";
+    public String MESSAGE2 = "no message";
+
     private static void func(int number, int j) {
         System.out.println(number);
+        System.out.println(MESSAGE);
+        System.out.println(new T2().MESSAGE2);
     }
 
 }
