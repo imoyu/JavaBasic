@@ -140,4 +140,6 @@ public class T1 {
         }
 
     }
+
+    public void func() { }
 }

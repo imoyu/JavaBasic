@@ -5,8 +5,10 @@ import org.junit.Test;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 public class T2 {
 
@@ -53,6 +55,8 @@ public class T2 {
         System.out.println(s);
 
         new T2().stringFormatTest();
+        Map<String, String> map = new HashMap<>();
+        map.put("", "");
     }
 
     public static String MESSAGE = "no message";
