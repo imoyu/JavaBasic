@@ -68,4 +68,20 @@ public class T2 {
         System.out.println(new T2().MESSAGE2);
     }
 
+    @Test
+    public void nullStringTest() {
+
+//        String s = null;
+//        String s1 = "s".concat("");
+//        System.out.println(s1);   空指针
+
+//        String s = null;
+//        String s1 = "->".concat(s);
+//        System.out.println(s1);  // 空指针
+
+        StringBuilder builder = new StringBuilder();
+        String s = null;
+        System.out.println(builder.append(s));
+
+    }
 }
