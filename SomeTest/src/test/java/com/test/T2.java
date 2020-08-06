@@ -198,6 +198,17 @@ public class T2 {
         }
 
         System.out.println(src);
+        System.out.println("\u1232".length());
 
+    }
+
+    @Test
+    public void indexOfAndContainsTest() {
+
+        String s = null;
+        String s2 = "ICD业务落箱";
+        System.out.println("ICD业务落箱".indexOf("ICD"));
+
+//        System.out.println(s.contains(s2));   空指针
     }
 }
