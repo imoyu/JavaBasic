@@ -161,7 +161,7 @@ public class T2 {
             "}\n";
 
     @Test
-    public void StringtoUnicodeTest1() {
+    public void StringToUnicodeTest1() {
 
         int t =  src.length() / 6;
         StringBuilder str = new StringBuilder();
@@ -182,7 +182,7 @@ public class T2 {
     }
 
     @Test
-    public void StringtoUnicodeTest2() {
+    public void StringToUnicodeTest2() {
 
         Pattern pattern = Pattern.compile("(\\\\u(\\p{XDigit}{4}))");
         Matcher matcher = pattern.matcher(src);
