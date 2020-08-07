@@ -210,5 +210,7 @@ public class T2 {
         System.out.println("ICD业务落箱".indexOf("ICD"));
 
 //        System.out.println(s.contains(s2));   空指针
+        String s3 = "\u505a\u7bb1\u8981\u6c42";
+        System.out.println(s3);
     }
 }
