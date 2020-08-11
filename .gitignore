@@ -10,6 +10,7 @@ rebel.xml
 .settings/
 client-builder/
 *.MF
+**/reflect/test/
 
 ### Package Files ###
 *.jar
