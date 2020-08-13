@@ -5,6 +5,7 @@ public class Test8 {
     public static void main(String[] args) {
         System.out.println(ResponseCodeImpl.SUCCESS.code());
         System.out.println(ResponseCodeImpl.SUCCESS.msg());
+        System.out.println(ResponseCodeImpl.SUCCESS.name());
     }
 
 }

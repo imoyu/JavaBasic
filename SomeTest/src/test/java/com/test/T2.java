@@ -2,6 +2,7 @@ package com.test;
 
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -212,5 +213,14 @@ public class T2 {
 //        System.out.println(s.contains(s2));   空指针
         String s3 = "\u505a\u7bb1\u8981\u6c42";
         System.out.println(s3);
+    }
+
+    @Test
+    public void BigDecimalCompareToTest() {
+        System.out.println(new BigDecimal(10).compareTo(new BigDecimal(8))); // 1
+        System.out.println(new BigDecimal(10).compareTo(new BigDecimal(10))); // 0
+        System.out.println(new BigDecimal(10).compareTo(new BigDecimal(12))); // -1
+        System.out.println(new BigDecimal(123).setScale(2, BigDecimal.ROUND_HALF_UP));
+        
     }
 }
