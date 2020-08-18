@@ -34,15 +34,15 @@ public class StreamTest {
     protected class WrapString {
         private String str;
 
+        public String func() {
+            return str.trim().substring(1, str.length());
+        }
+
         public WrapString(String str) {
             this.str = str;
         }
 
         public WrapString() {
-        }
-
-        public String func() {
-            return str.trim().substring(1, str.length());
         }
 
         public String getStr() {

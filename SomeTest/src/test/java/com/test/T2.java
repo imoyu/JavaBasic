@@ -223,4 +223,13 @@ public class T2 {
         System.out.println(new BigDecimal(123).setScale(2, BigDecimal.ROUND_HALF_UP));
         
     }
+
+    @Test
+    public void zeroTest() {
+        double d = 0;
+        double v = d / 0; // NaN
+        Double dou = new Double(v);
+        System.out.println(v);
+        System.out.println(dou.intValue());
+    }
 }
