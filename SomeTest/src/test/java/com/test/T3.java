@@ -16,7 +16,25 @@ public class T3 {
         System.out.println(d3 + d4);
         System.out.println(d1 + d4);
         System.out.println(0.01 + 0.05);
-
+        byte b = -5;
+        System.out.println(b >>> (byte) 2);
+        byte y = -2;
+        // byte short char 参与运算结果会自动升级为 int，不管有没有 int 参与
+        int i2 = b + y;
+        short s1 = 9;
+        short s2 = 9;
+        int i1 = s1 + s2;
+        char c1 = 2;
+        char c2 = 2;
+        int i = c1 + c2;
     }
 
+    @Test
+    public void BitOpTest() {
+
+        // a % 2^n  ==>  a & 2^n - 1
+        System.out.println(15 % 8);
+        System.out.println(15 & 7);
+
+    }
 }

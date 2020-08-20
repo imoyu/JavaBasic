@@ -1,6 +1,6 @@
 package com.enumm.manual;
 
-public class SeasonManual {
+public final class SeasonManual {
 
     public static final SeasonManual SPRING = new SeasonManual("春天", 1);
     public static final SeasonManual SUMMER = new SeasonManual("夏天", 2);
