@@ -14,13 +14,15 @@ public class T3 {
             }
         };
 
+        System.out.println(list1);
+        System.out.println(list2);
 
     }
     // 相当于：
-    static class ArrayListSon<T> extends ArrayList<T> {
+    private static class ArrayListSon<T> extends ArrayList<T> {
 
     }
-    static List<String> list2 = new ArrayListSon<String>();
+    private static List<String> list2 = new ArrayListSon<>();
     static {
         list2.add("a");
         list2.add("b");
