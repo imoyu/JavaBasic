@@ -51,10 +51,12 @@ public class T1 {
         CC cc2 = new CC();
 
         System.out.println(p instanceof Person); // true
+        Person.class.isInstance(p);
         System.out.println(p instanceof Child); // true
         System.out.println(p instanceof CC); // false
 //        System.out.println(cc2 instanceof CC2); // 报错
-
+        System.out.println(CC2.class.isInstance(cc2));
+        System.out.println(CC.class.isInstance(p));
         long l;
         char c = 'd';
         l = c;
