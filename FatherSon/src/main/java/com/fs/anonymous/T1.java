@@ -57,6 +57,8 @@ public class T1 {
 //        System.out.println(cc2 instanceof CC2); // 报错
         System.out.println(CC2.class.isInstance(cc2));
         System.out.println(CC.class.isInstance(p));
+        System.out.println(null instanceof CC); // false
+        System.out.println(CC.class.isInstance(null));
         long l;
         char c = 'd';
         l = c;
