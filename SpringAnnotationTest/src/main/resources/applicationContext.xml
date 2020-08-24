@@ -15,9 +15,11 @@
     <bean id="t1" class="com.yinut.pojo.Tiger">
         <property name="name" value="tiger1"/>
     </bean>
-    <bean id="t2" class="com.yinut.pojo.Tiger">
-        <property name="name" value="tiger2"/>
-    </bean>
+<!--    <bean id="t2" class="com.yinut.pojo.Tiger">-->
+<!--        <property name="name" value="tiger2"/>-->
+<!--    </bean>-->
     <bean id="zoo" class="com.yinut.pojo.Zoo"/>
+
+    <context:component-scan base-package="com.yinut"/>
 
 </beans>
