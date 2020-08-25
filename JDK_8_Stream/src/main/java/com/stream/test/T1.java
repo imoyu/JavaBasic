@@ -65,6 +65,8 @@ public class T1 {
                 .flatMap(Arrays::stream)
                 .collect(Collectors.toList());
         System.out.println(list);
+
+
     }
 
 }

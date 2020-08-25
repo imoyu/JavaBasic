@@ -15,6 +15,20 @@ public class Out1 {
         logger.warn("=====warn=====");
         logger.error("=====error=====");
 
+        try {
+            f1();
+            throw new RuntimeException("");
+        } catch (Exception e) {
+            logger.error("算数错误：{}", e.getMessage(), e);
+//            logger.error("-------------------------------- {}", e.getMessage());
+        }
     }
 
+    private static void f1() {
+        f2();
+    }
+
+    private static void f2() {
+        System.out.println(1 / 0);
+    }
 }
