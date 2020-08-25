@@ -17,7 +17,6 @@ public class Test7 {
 //        ls[0].add(2);    // 编译报错
         ls[0].add("2");
 
-
     }
 
 }

@@ -19,7 +19,7 @@ public class Test3 {
     }
 
     // 3. 泛型通配符 ？
-    private static void print2(Generic<?> generic) {
+    private static void print2(Generic<? extends Number> generic) {
         System.out.println(generic.value);
     }
 }

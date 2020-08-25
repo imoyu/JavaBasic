@@ -26,71 +26,71 @@ public class Test4 {
         return t;
     }
 
-    public static <E> Generate<E> func1() {
+    public static <E> Generic<E> func1() {
 
         if (new Random().nextBoolean())
-            return (Generate<E>) new Generate<Integer>();
+            return (Generic<E>) new Generic<Integer>();
         else
-            return (Generate<E>) new Generate<String>();
+            return (Generic<E>) new Generic<String>();
 
     }
 
-    public static Generate func2() {
+    public static Generic func2() {
 
         if (new Random().nextBoolean())
-            return (Generate) new Generate<Integer>();
+            return (Generic) new Generic<Integer>();
         else
-            return (Generate) new Generate<String>();
+            return (Generic) new Generic<String>();
 
     }
 
-    public static Generate<?> func3() {
+    public static Generic<?> func3() {
 
         if (new Random().nextBoolean())
-            return new Generate<Integer>();
+            return new Generic<Integer>();
         else
-            return new Generate<String>();
+            return new Generic<String>();
 
     }
 
-    public static Generate func4() {
+    public static Generic func4() {
 
         if (new Random().nextBoolean())
-            return new Generate<Integer>();
+            return new Generic<Integer>();
         else
-            return new Generate<String>();
+            return new Generic<String>();
 
     }
 
-    public static Generate<?> func5() {
+    public static Generic<?> func5() {
 
         if (new Random().nextBoolean())
-            return Generate.success(new Integer(12));
+            return Generic.success(new Integer(12));
         else
-            return Generate.success("ds");
+            return Generic.success("ds");
 
     }
 
-    public static <T> Generate<T> func6(Class<T> clazz) throws IllegalAccessException, InstantiationException {
+    public static <T> Generic<T> func6(Class<T> clazz) throws IllegalAccessException, InstantiationException {
         T t = clazz.newInstance();
-        return new Generate<>(t);
+        return new Generic<>(t);
     }
 }
 
-class Generate<T> {
+class Generic<T> {
 
     private T tt;
 
-    protected Generate() {
+    protected Generic() {
 
     }
 
-    protected Generate(T tt) {
+    protected Generic(T tt) {
         this.tt = tt;
     }
 
-    public static <E> Generate<E> success(E e) {
-        return new Generate<>(e);
+    public static <E> Generic<E> success(E e) {
+        return new Generic<>(e);
     }
 
     T t = (T) new Object();

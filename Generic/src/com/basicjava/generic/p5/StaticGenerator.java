@@ -9,7 +9,7 @@ public class StaticGenerator<T> {
      * 如：public static void show(T t){..},此时编译器会提示错误信息：
           "StaticGenerator cannot be refrenced from static context"
      */
-    public static <T> void show(T t){
+    public static <E> void show(E e){
 
     }
 }

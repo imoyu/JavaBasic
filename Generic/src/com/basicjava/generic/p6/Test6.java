@@ -19,4 +19,8 @@ class Son extends Father {}
 // 1. 定义上边界
 class Generic<T extends Object> {
 
+    public <E extends Number & Comparable<Number>> void f(E[] a) {
+
+    }
+
 }
