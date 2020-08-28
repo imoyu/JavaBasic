@@ -22,6 +22,16 @@ public class Student {
         this.school = school;
     }
 
+//    Lambda 中使用 this
+//    void func() {
+//        List<Student> students = new ArrayList<>();
+//        students.stream().map(this::getName).forEach(System.out::println);
+//    }
+//
+//    private String getName(Student student) {
+//        return "null";
+//    }
+
     public Integer getId() {
         return id;
     }

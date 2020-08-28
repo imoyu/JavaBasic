@@ -66,7 +66,6 @@ public class T1 {
                 .collect(Collectors.toList());
         System.out.println(list);
 
-
     }
 
 }

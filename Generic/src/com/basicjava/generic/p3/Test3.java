@@ -34,3 +34,4 @@ class Generic<T> {
         this.value = value;
     }
 }
+
