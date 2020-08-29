@@ -50,7 +50,18 @@ public class GenericWildCardTest {
                 return null;
             }
         });
-        f3((Function<Integer, B>) integer -> null);
+        f3(new Function<Object, String>() {
+            @Override
+            public String apply(Object o) {
+                return "null";
+            }
+        });
+        f3(new Function<Object, String>() {
+            @Override
+            public String apply(Object o) {
+                return "";
+            }
+        });
 
         f5(new G());
         f5(new G<>());

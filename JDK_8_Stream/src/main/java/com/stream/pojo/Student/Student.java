@@ -1,5 +1,8 @@
 package com.stream.pojo.Student;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Student {
 
 //    new Student(20160001, "孔明", 20, 1, "土木工程", "武汉大学")
@@ -23,14 +26,16 @@ public class Student {
     }
 
 //    Lambda 中使用 this
-//    void func() {
-//        List<Student> students = new ArrayList<>();
-//        students.stream().map(this::getName).forEach(System.out::println);
-//    }
-//
-//    private String getName(Student student) {
-//        return "null";
-//    }
+    void func() {
+        List<Student> students = new ArrayList<>();
+        students.stream()
+                .map(this::getName)
+                .forEach(System.out::println);
+    }
+
+    private String getName(Student student) {
+        return student.getName();
+    }
 
     public Integer getId() {
         return id;
