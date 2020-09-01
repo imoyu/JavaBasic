@@ -48,6 +48,9 @@ public class No2PrimitiveStream {
         Map<String, String> map = new HashMap<>();
         map.put("null", "pol");
         System.out.println(map.get(null));
+
+        // rebase test diff file change (no conflict) 2
+        // rebase test diff file change (no conflict) 3
     }
 
 }

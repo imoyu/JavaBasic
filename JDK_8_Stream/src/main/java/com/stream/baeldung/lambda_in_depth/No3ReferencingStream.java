@@ -13,6 +13,9 @@ public class No3ReferencingStream {
         stream.forEach(System.out::println);
 
         // rebase 测试 init
+        // ----------- 1
+        // ----------- 2
+        // ----------- 3
     }
 
 }
