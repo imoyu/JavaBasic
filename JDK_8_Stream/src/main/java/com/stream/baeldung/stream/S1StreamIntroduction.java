@@ -46,6 +46,7 @@ public class S1StreamIntroduction {
 //        Stream.of("", "f").collect();
 //        Stream.of(1, 2).collect();
 //        Stream.of(new Object()).collect();
+
     }
 
 }
