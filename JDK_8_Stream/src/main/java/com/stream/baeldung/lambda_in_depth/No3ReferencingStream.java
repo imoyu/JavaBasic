@@ -11,8 +11,8 @@ public class No3ReferencingStream {
         stream.filter("a"::equals);
 
         stream.forEach(System.out::println);
-        stream.forEach(System.out::println);
-        stream.forEach(System.out::println);
+
+        // rebase 测试 init
     }
 
 }
