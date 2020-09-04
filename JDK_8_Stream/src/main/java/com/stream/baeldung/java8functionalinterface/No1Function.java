@@ -1,5 +1,6 @@
 package com.stream.baeldung.java8functionalinterface;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.BiConsumer;
@@ -35,6 +36,14 @@ public class No1Function {
         Supplier<String> supplier = () -> "";
 
         Function<Object, String> function = (o) -> o.toString();
+
+        int v1 = 0;
+        int v2 = 0;
+        v2 = 9;
+        new ArrayList<>().forEach(o -> {
+            System.out.println(v1);
+//            System.out.println(v2);  // Error
+        });
 
     }
 
