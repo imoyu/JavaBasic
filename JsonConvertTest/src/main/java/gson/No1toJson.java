@@ -1,6 +1,7 @@
 package gson;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,6 +19,8 @@ public class No1toJson {
         String json = gson.toJson(colors);
         System.out.println(json);
 
+
+        System.out.println(new GsonBuilder().generateNonExecutableJson().create().toJson(colors));
     }
 
 }

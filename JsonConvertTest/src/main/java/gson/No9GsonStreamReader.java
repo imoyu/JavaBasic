@@ -1,6 +1,5 @@
 package gson;
 
-import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
 import java.io.IOException;
@@ -31,13 +30,15 @@ public class No9GsonStreamReader {
 
         System.out.println(user);
 
-        String json2 = "{\"name\":\"包青天\",\"age\":\"24\",\"u9s\":[{\"name\":\"包儿子1\",\"age\":\"20\"}, {\"name\":\"包儿子2\",\"age\":\"21\"}]}";
+        String json2 = "{\"name\":\"包青天\",\"age\":\"24\",\"u9s\":[{\"name\":\"包儿子1\",\"age\":\"20\"}, {\"name\":\"包儿子2\",\"age\":null}]}";
         UserWithList user2 = new UserWithList();
         JsonReader reader2 = new JsonReader(new StringReader(json2));
 
         reader2.beginObject();
         while (reader2.hasNext()) {
             String key = reader2.nextName();
+
+            System.out.println(reader2.peek() + " <<<");
 
             if ("name".equals(key)) {
                 user2.setName(reader2.nextString());
@@ -48,9 +49,19 @@ public class No9GsonStreamReader {
             if ("u9s".equals(key)) {
                 List<User9> list = new ArrayList<>();
                 reader2.beginArray();
-                Gson gson = new Gson();
                 while (reader2.hasNext()) {
-                    User9 u = gson.fromJson(reader2, User9.class);
+                    User9 u = new User9();
+                    reader2.beginObject();
+                    while (reader2.hasNext()) {
+                        String name = reader2.nextName();
+                        if ("name".equals(name)) {
+                            u.setName(reader2.nextString());
+                        }
+                        if ("age".equals(name)) {
+                            u.setAge(reader2.nextInt());
+                        }
+                    }
+                    reader2.endObject();
                     list.add(u);
                 }
                 reader2.endArray();
