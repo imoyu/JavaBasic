@@ -23,6 +23,8 @@ public class No9GsonStreamReader {
                 user.setName(reader.nextString());
             }
             if ("age".equals(name)) {
+                reader.nextNull();
+                reader.skipValue();
                 user.setAge(reader.nextInt());
             }
         }
