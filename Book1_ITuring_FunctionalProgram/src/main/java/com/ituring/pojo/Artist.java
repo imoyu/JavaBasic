@@ -1,12 +1,12 @@
 package com.ituring.pojo;
 
-import java.util.List;
 import java.util.StringJoiner;
+import java.util.stream.Stream;
 
 public class Artist {
 
     private String name;
-    private List<String> members;
+    private Stream<String> members;
     private String origin;
     private Track track;
     private Album album;
@@ -19,7 +19,7 @@ public class Artist {
         this.origin = origin;
     }
 
-    public Artist(String name, List<String> members, String origin, Track track, Album album) {
+    public Artist(String name, Stream<String> members, String origin, Track track, Album album) {
         this.name = name;
         this.members = members;
         this.origin = origin;
@@ -35,11 +35,11 @@ public class Artist {
         this.name = name;
     }
 
-    public List<String> getMembers() {
+    public Stream<String> getMembers() {
         return members;
     }
 
-    public void setMembers(List<String> members) {
+    public void setMembers(Stream<String> members) {
         this.members = members;
     }
 
