@@ -1,6 +1,8 @@
 ## 一些 Java 基础学习与复习
 
-#### 自定义注解的使用与简单的解析原理 [CustomizedAnnotation](https://github.com/yinut/JavaBasic/tree/master/CustomizedAnnotation/src/com/iorib)
+#### 图灵函数式编程阅读笔记  [Book1_ITuring_FunctionalProgram](https://github.com/yinut/JavaBasic/tree/master/Book1_ITuring_FunctionalProgram/)
+
+#### 自定义注解的使用与简单的解析原理 [CustomizedAnnotation](https://github.com/yinut/JavaBasic/tree/master/CustomizedAnnotation/)
 
 #### 枚举类测试 [EnumTest](https://github.com/yinut/JavaBasic/tree/master/EnumTest)
 
