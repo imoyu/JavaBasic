@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.*;
+import java.util.Date;
 
 public class TimeTest {
 
@@ -106,14 +107,6 @@ public class TimeTest {
     }
 
     @Test
-    public void ZoneIdTest() {
-
-        ZoneId zone = ZoneId.systemDefault();
-        System.out.println(zone);
-
-    }
-
-    @Test
     public void MonthDayTest() {
 
         MonthDay monthDay = MonthDay.of(2, 29);
@@ -133,6 +126,19 @@ public class TimeTest {
     public void OffsetDateTimeTest() {
 
         OffsetDateTime offsetDateTime = OffsetDateTime.now();
+        LocalDateTime localDateTime = LocalDateTime.now();
+
+        OffsetDateTime offsetDateTime1 = OffsetDateTime.of(localDateTime, ZoneOffset.ofHours(4));
+        System.out.println(offsetDateTime);
+        System.out.println(offsetDateTime1);
+        System.out.println(localDateTime);
+
+        LocalDateTime localDateTime1 = offsetDateTime.toLocalDateTime();
+        System.out.println(localDateTime);
+
+        System.out.println(offsetDateTime.getOffset().getRules());
+
+        System.out.println(offsetDateTime1.withOffsetSameLocal(ZoneOffset.UTC).toZonedDateTime());
 
     }
 
@@ -168,4 +174,87 @@ public class TimeTest {
 //        yearMonth
 
     }
+
+    @Test
+    public void ZoneDateTimeTest() {
+
+        LocalDateTime localDateTime = LocalDateTime.now();
+        ZonedDateTime zonedDateTime = ZonedDateTime.of(localDateTime, ZoneId.of("America/New_York"));
+        System.out.println(localDateTime.query(TemporalQueries.zoneId()));
+        System.out.println(localDateTime.query(TemporalQueries.zone()));
+        System.out.println(zonedDateTime.query(TemporalQueries.zoneId()));
+        System.out.println(zonedDateTime.query(TemporalQueries.zone()));
+
+        System.out.println(localDateTime);
+        System.out.println(zonedDateTime);
+
+    }
+
+    @Test
+    public void ZoneIdTest() {
+
+//        ZoneId.SHORT_IDS.forEach((k, v) -> {
+//            System.out.println(k + " : " + v);
+//        });
+//
+//        System.out.println(ZoneId.getAvailableZoneIds());
+
+        ZoneId zoneId = ZoneId.systemDefault();
+        System.out.println(zoneId);
+
+        System.out.println(zoneId.getId());
+        System.out.println(zoneId.getRules());
+
+        System.out.println(zoneId.normalized());
+    }
+
+    @Test
+    public void ZoneOffsetTest() {
+
+        LocalDateTime localDateTime = LocalDateTime.now();
+        System.out.println(localDateTime);
+        ZoneOffset zoneOffset = ZoneOffset.of("Z");
+        System.out.println(zoneOffset.adjustInto(localDateTime));// error
+
+    }
+
+    @Test
+    public void DateToLocalDateTimeTest() {
+
+        Date date = new Date();
+        Instant instant = date.toInstant();
+
+        // 2020-10-09T14:21:57.960
+        LocalDateTime localDateTime1 = LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
+
+        // 2020-10-09T06:21:57.960
+        LocalDateTime localDateTime2 = LocalDateTime.ofInstant(instant, ZoneId.of("UTC+18"));
+
+        System.out.println(localDateTime1);
+        System.out.println(localDateTime2);
+
+        LocalDateTime localDateTime3 = LocalDateTime.now();
+        System.out.println(localDateTime3.atZone(ZoneId.of("Z")));
+
+        ZonedDateTime dateTime2 = ZonedDateTime.of(2015, 11, 30, 23, 45, 59, 1234, ZoneId.of("UTC+12"));
+        System.out.println(dateTime2.toLocalDateTime());
+
+        System.out.println(dateTime2);
+        ZonedDateTime dateTime3 = dateTime2.withZoneSameInstant(ZoneId.of("UTC+15"));
+        System.out.println(dateTime3);
+
+        LocalDateTime localDateTime = LocalDateTime.parse("2020-09-15T17:33:45");
+        System.out.println(localDateTime);
+        OffsetDateTime offsetDateTime = localDateTime.atOffset(ZoneOffset.ofHours(5));
+        System.out.println(offsetDateTime);
+        System.out.println(offsetDateTime.toInstant());
+        OffsetDateTime offsetDateTime1 = offsetDateTime.withOffsetSameLocal(ZoneOffset.ofHours(8));
+        System.out.println(offsetDateTime1);
+        System.out.println(offsetDateTime1.toInstant());
+        OffsetDateTime offsetDateTime2 = offsetDateTime1.withOffsetSameInstant(ZoneOffset.ofHours(8));
+        System.out.println(offsetDateTime2);
+        System.out.println(offsetDateTime2.toInstant());
+    }
+
+
 }
