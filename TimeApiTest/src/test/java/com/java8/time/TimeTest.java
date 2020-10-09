@@ -4,9 +4,7 @@ import org.junit.Test;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
-import java.time.temporal.Temporal;
-import java.time.temporal.TemporalAdjusters;
+import java.time.temporal.*;
 
 public class TimeTest {
 
@@ -67,6 +65,12 @@ public class TimeTest {
 
         LocalDateTime localDateTime = passTemporal.truncatedTo(ChronoUnit.HOURS);
         System.out.println(localDateTime);
+
+
+        System.out.println(localDateTime.query(TemporalQueries.zone()));
+        System.out.println(localDateTime.query(TemporalQueries.zoneId()));
+        System.out.println(localDateTime.query(TemporalQueries.chronology()));
+        System.out.println(localDateTime.query(TemporalQueries.localTime()));
     }
 
     @Test
@@ -82,7 +86,9 @@ public class TimeTest {
     public void DurationTest() {
 
         Duration between = Duration.between(LocalDate.of(2001, 6, 13).atTime(15, 30), LocalDateTime.parse("2001-06-23T15:37:55"));
+        System.out.println(between);
         System.out.println(between.getSeconds());
+        System.out.println(between.getNano());
 
     }
 
@@ -104,6 +110,62 @@ public class TimeTest {
 
         ZoneId zone = ZoneId.systemDefault();
         System.out.println(zone);
+
+    }
+
+    @Test
+    public void MonthDayTest() {
+
+        MonthDay monthDay = MonthDay.of(2, 29);
+        MonthDay.parse("--10-01");
+        System.out.println(monthDay.isValidYear(2021));
+
+        Temporal temporal = monthDay.adjustInto(LocalDateTime.now());
+
+        System.out.println(monthDay.range(ChronoField.DAY_OF_MONTH));
+
+        System.out.println(monthDay.query(TemporalQueries.chronology()));
+        System.out.println(monthDay.query(TemporalQueries.zone()));
+        System.out.println(monthDay.query(TemporalQueries.zoneId()));
+    }
+
+    @Test
+    public void OffsetDateTimeTest() {
+
+        OffsetDateTime offsetDateTime = OffsetDateTime.now();
+
+    }
+
+    @Test
+    public void OffsetTimeTest() {
+
+        OffsetTime offsetTime = OffsetTime.now();
+
+
+    }
+
+    @Test
+    public void PeriodTest() {
+
+        Period between = Period.between(LocalDate.parse("2020-03-01"), LocalDate.parse("2021-06-13"));
+        System.out.println(between);
+
+        System.out.println(Period.ofMonths(99).normalized());
+    }
+
+    @Test
+    public void YearTest() {
+
+        Year year = Year.now();
+
+    }
+
+    @Test
+    public void YearMonthTest() {
+
+        YearMonth yearMonth = YearMonth.now();
+
+//        yearMonth
 
     }
 }
