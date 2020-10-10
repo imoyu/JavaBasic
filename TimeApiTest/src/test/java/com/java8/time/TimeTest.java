@@ -138,6 +138,8 @@ public class TimeTest {
 
         System.out.println(offsetDateTime.getOffset().getRules());
 
+        System.out.println(offsetDateTime.getOffset());
+
         System.out.println(offsetDateTime1.withOffsetSameLocal(ZoneOffset.UTC).toZonedDateTime());
 
     }
