@@ -2,6 +2,10 @@ package com.test;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+
 public class T3 {
 
     @Test
@@ -35,6 +39,31 @@ public class T3 {
         // a % 2^n  ==>  a & 2^n - 1
         System.out.println(15 % 8);
         System.out.println(15 & 7);
+
+    }
+
+    @Test
+    public void SystemSeparatorTest() {
+
+        System.out.println("-------------");
+        System.out.println(System.getProperty("line.separator"));
+        System.out.println(System.lineSeparator());
+        System.out.println("-------------");
+
+        int a = 3;
+
+
+    }
+
+    @Test
+    public void Test() {
+
+        List<String> list = Arrays.asList("colection");
+
+        Optional<String> reduce = list.stream()
+                .reduce((s1, s2) -> s1 + " " + s2);
+
+        System.out.println(reduce.get());
 
     }
 }
