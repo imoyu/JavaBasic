@@ -2,9 +2,7 @@ package com.test;
 
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class T3 {
 
@@ -56,7 +54,7 @@ public class T3 {
     }
 
     @Test
-    public void Test() {
+    public void ReduceTest() {
 
         List<String> list = Arrays.asList("colection");
 
@@ -65,5 +63,44 @@ public class T3 {
 
         System.out.println(reduce.get());
 
+    }
+
+    @Test
+    public void OptionalTest() {
+
+        Optional<Dog> ii = Optional.of(new Dog("ii"));
+        System.out.println(ii.map(Dog::getName));
+
+        Optional<Dog> ii2 = Optional.empty();
+        System.out.println(ii2.map(Dog::getName));
+
+    }
+
+    @Test
+    public void MethodReferenceTest() {
+
+        List<String> origin = new ArrayList<>();
+        List<String> res = new ArrayList<>();
+
+        origin.stream()
+                .filter(Objects::nonNull)
+                .forEach(res::add);
+
+    }
+}
+
+class Dog {
+    private String name;
+
+    public Dog(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
