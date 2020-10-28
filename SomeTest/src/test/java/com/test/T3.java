@@ -87,6 +87,24 @@ public class T3 {
                 .forEach(res::add);
 
     }
+
+    @Test
+    public void streamMapTest() {
+
+        List<Dog> dogs = new ArrayList<>();
+        dogs.add(new Dog("小黄"));
+        dogs.add(new Dog("小白"));
+        dogs.add(null);
+        dogs.add(new Dog("小灰"));
+
+        dogs.stream()
+                .filter(Objects::nonNull)
+                .map(Dog::getName)
+                .peek(System.out::println)
+                .peek(System.out::println)
+                .peek(System.out::println)
+                .forEach(System.out::println);
+    }
 }
 
 class Dog {
