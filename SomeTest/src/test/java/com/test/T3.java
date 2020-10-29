@@ -72,7 +72,11 @@ public class T3 {
         System.out.println(ii.map(Dog::getName));
 
         Optional<Dog> ii2 = Optional.empty();
+        if (new Random().nextBoolean()) {
+            ii2 = ii;
+        }
         System.out.println(ii2.map(Dog::getName));
+        System.out.println(ii2.map(Dog::getName).isPresent());
 
     }
 
