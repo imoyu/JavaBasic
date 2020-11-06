@@ -13,6 +13,7 @@ public class T4Assert {
 
         // 打印是否开启了断言，如果为false，则没有启用断言
         System.out.println(isOpen);
+        // =======
     }
 
 }
