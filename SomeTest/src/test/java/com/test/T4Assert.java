@@ -4,6 +4,8 @@ import org.junit.Test;
 
 import java.text.MessageFormat;
 // ===========
+
+// 空格
 public class T4Assert {
 
     @Test
