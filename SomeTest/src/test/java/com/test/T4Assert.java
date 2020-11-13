@@ -2,6 +2,8 @@ package com.test;
 
 import org.junit.Test;
 
+import java.text.MessageFormat;
+
 public class T4Assert {
 
     @Test
@@ -16,4 +18,10 @@ public class T4Assert {
         // =======
     }
 
+    @Test
+    public void messageFormatTest() {
+
+        System.out.println(MessageFormat.format("{0} {1}", "ds", null));
+
+    }
 }
