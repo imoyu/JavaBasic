@@ -56,6 +56,15 @@ public class No7GsonTreeModelRead {
                 System.out.println(element.getAsJsonNull());
             }
         }
+
+        String j = "{\"key\": null}";
+        JsonElement element = parser.parse(j);
+
+        JsonObject object = element.getAsJsonObject();
+
+        JsonElement key = object.get("key");
+
+        System.out.println(key.isJsonNull());
     }
 
 }
