@@ -93,8 +93,8 @@ public class YzsSQLGenerator {
                 "INSERT INTO ecommerce.order_product_rel (id, created_by, creation_time, last_update_time, updated_by, version, price,\n" +
                 "product_description, product_name, qty, order_id, product_id, cost_price,\n" +
                 "delivery_fee, is_mounting_tyre, mounting_tyre_time)\n" +
-                "VALUES (null, '', @create_time, @create_time, '', 0, cast(@paid_amount / @qty as decimal(10,2)), null, @product_name, cast(@qty * 1000 as unsigned), @@identity, @product_id,\n" +
-                "cast(@total_price / @qty as decimal(10,2)), null, null, null);\n" +
+                "VALUES (null, '', @create_time, @create_time, '', 0, cast(@paid_amount / @qty as decimal(10,2)), null, @product_name, cast(@qty * 1000 as unsigned),\n" +
+                "(select id from ecommerce.customer_order where creation_time = @create_time and customer_id = @customer_id and paid_time = @create_time and total_price = @total_price and promote_amount = @paid_amount and truck_plate_number = @plate_number order by id desc limit 1), @product_id, cast(@total_price / @qty as decimal(10,2)), null, null, null);\n" +
                 "\n" +
                 "INSERT INTO yzs_tms.payment_record (ID, CREATED_BY, CREATION_TIME, LAST_UPDATE_TIME, UPDATED_BY, VERSION, AMOUNT,\n" +
                 "CONTAINER_LOAD_ID, PAYMENT_BUSSINESS, TYPE, COMPANY_ID, DRIVER_ID, REF_ID,\n" +
@@ -104,7 +104,7 @@ public class YzsSQLGenerator {
                 "\n" +
                 "INSERT INTO yzs_tms.payment_record_detail (ID, CREATED_BY, CREATION_TIME, LAST_UPDATE_TIME, UPDATED_BY, VERSION, AMOUNT,\n" +
                 "CAN_WITHDRAWAL, CAN_WITHDRAWAL_TIME, PAYMENT_RECORD_ID)\n" +
-                "VALUES (null, '', @create_time, @create_time, '', 0, @paid_amount, false, null, @@identity);";
+                "VALUES (null, '', @create_time, @create_time, '', 0, @paid_amount, false, null, (select id from ecommerce.customer_order where creation_time = @create_time and customer_id = @customer_id and paid_time = @create_time and total_price = @total_price and promote_amount = @paid_amount and truck_plate_number = @plate_number order by id desc limit 1));";
 
         String s1 = map.get("@plate_number");
 

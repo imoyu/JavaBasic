@@ -24,7 +24,7 @@ public class T1 {
 
         BaseFont baseFont = BaseFont.createFont("STSong-Light", "UniGB-UCS2-H", BaseFont.NOT_EMBEDDED);
         FontFactory.getFont("STSong-Light", "UniGB-UCS2-H", BaseFont.NOT_EMBEDDED,10f, Font.NORMAL, BaseColor.BLACK);
-        InputStream input = new FileInputStream("C:\\Users\\admin\\Desktop\\temp\\pdf\\input\\模板2.pdf");
+        InputStream input = new FileInputStream("C:\\Users\\admin\\Desktop\\temp\\input\\a.pdf");
         PdfReader reader = new PdfReader(input);
         OutputStream output = new FileOutputStream("C:\\Users\\admin\\Desktop\\temp\\pdf\\output\\安全承诺书.pdf");
         PdfStamper stamper = new PdfStamper(reader, output);
@@ -63,13 +63,13 @@ public class T1 {
 
 
         // 签名
-        Image image1 = Image.getInstance("C:\\Users\\admin\\Desktop\\temp\\pdf\\input\\d10d.png");
+        Image image1 = Image.getInstance("C:\\Users\\admin\\Desktop\\temp\\input\\b.png");
         image1.scaleToFit(60, 40);
         image1.setAbsolutePosition(435, 142);
         page2.addImage(image1);
 
         // 盖章
-        Image image2 = Image.getInstance("C:\\Users\\admin\\Desktop\\temp\\pdf\\input\\01.png");
+        Image image2 = Image.getInstance("C:\\Users\\admin\\Desktop\\temp\\input\\c.png");
         image2.scaleToFit(135, 135);
         image2.setAbsolutePosition(112, 70);
         page2.addImage(image2);
