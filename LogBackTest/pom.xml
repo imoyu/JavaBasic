@@ -10,6 +10,12 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.11</version>
+        </dependency>
+
         <!-- Logback POM -->
         <dependency>
             <groupId>org.slf4j</groupId>

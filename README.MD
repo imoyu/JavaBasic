@@ -24,9 +24,13 @@ D:\MD\typora\学习_new\Java\基础\Java 知识点专题.md  第 8 小节
 
 #### Java 8 Stream [JDK_8_Stream](https://github.com/yinut/JavaBasic/tree/master/JDK_8_Stream)
 
+#### Gson 转换学习 [JsonConvertTest](https://github.com/yinut/JavaBasic/tree/master/JsonConvertTest)
+
+D:\MD\typora\学习_new\工具\Json\Gson\Gson 学习指南.md
+
 #### Logback xml 配置文件 [LogBackTest](https://github.com/yinut/JavaBasic/tree/master/LogBackTest)
 
-D:\MD\typora\学习_new\Java\基础\Java 知识点专题.md  第 13 小节
+D:\MD\typora\学习_new\Java\基础\Java 知识点专题.md  第 12 小节 Exception
 
 #### 属性绑定- @Value 和 @propertySource [PropertiesBind](https://github.com/yinut/JavaBasic/tree/master/PropertiesBindTest)
 
@@ -37,3 +41,8 @@ D:\MD\typora\学习_new\Java\基础\Java 知识点专题.md  第 10 小节
 #### 随手测试 [SomeTest](https://github.com/yinut/JavaBasic/tree/master/Reflect)
 
 #### Spring 注解测试 @Autowired [SpringAnnotationTest](https://github.com/yinut/JavaBasic/tree/master/SpringAnnotationTest)
+
+#### 新旧 Time Api 学习 [TimeApiTest](https://github.com/yinut/JavaBasic/tree/master/TimeApiTest)
+
+D:\MD\typora\学习_new\Java\基础\Java 知识点专题.md  第 15 小节
+
