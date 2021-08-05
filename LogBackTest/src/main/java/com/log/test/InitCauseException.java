@@ -11,13 +11,9 @@ public class InitCauseException {
         try {
             f2();
         } catch (Exception e) {
-            System.out.println(e);
-            System.out.println(e.getMessage());
             System.out.println(e.getCause());
-            System.out.println(e.getStackTrace());
-            System.out.println(e.getLocalizedMessage());
-            System.out.println(e.getSuppressed());
             System.out.println(ExceptionUtils.getStackTrace(e));
+            System.out.println(ExceptionUtils.getStackTrace(e.getCause()));
         }
 
     }
