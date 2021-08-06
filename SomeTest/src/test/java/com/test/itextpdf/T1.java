@@ -4,10 +4,7 @@ import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.FontFactory;
 import com.itextpdf.text.Image;
-import com.itextpdf.text.pdf.BaseFont;
-import com.itextpdf.text.pdf.PdfContentByte;
-import com.itextpdf.text.pdf.PdfReader;
-import com.itextpdf.text.pdf.PdfStamper;
+import com.itextpdf.text.pdf.*;
 import org.junit.Test;
 
 import java.io.FileInputStream;
@@ -20,7 +17,7 @@ public class T1 {
 
     // https://www.cnblogs.com/xxyfhjl/p/4143076.html
     @Test
-    public void Test() throws Exception {
+    public void S1Test() throws Exception {
 
         BaseFont baseFont = BaseFont.createFont("STSong-Light", "UniGB-UCS2-H", BaseFont.NOT_EMBEDDED);
         FontFactory.getFont("STSong-Light", "UniGB-UCS2-H", BaseFont.NOT_EMBEDDED,10f, Font.NORMAL, BaseColor.BLACK);
@@ -87,6 +84,55 @@ public class T1 {
         image2.scaleToFit(155, 155);
         image2.setAbsolutePosition(85, 70);
         page2.addImage(image2);
+
+        stamper.close();
+        reader.close();
+        input.close();
+
+    }
+
+    // 图片设置 https://blog.csdn.net/tomatocc/article/details/80668701
+    @Test
+    public void S2Test() throws Exception {
+
+        BaseFont baseFont = BaseFont.createFont("STSong-Light", "UniGB-UCS2-H", BaseFont.NOT_EMBEDDED);
+        FontFactory.getFont("STSong-Light", "UniGB-UCS2-H", BaseFont.NOT_EMBEDDED,10f, Font.NORMAL, BaseColor.BLACK);
+        InputStream input = new FileInputStream("C:\\Users\\admin\\Desktop\\temp\\pdf\\input2\\右转必停承诺书me2.pdf");
+        PdfReader reader = new PdfReader(input);
+        OutputStream output = new FileOutputStream("C:\\Users\\admin\\Desktop\\temp\\pdf\\input2\\result.pdf");
+        PdfStamper stamper = new PdfStamper(reader, output);
+        BaseColor color = new BaseColor(0, 0, 0);
+
+//        page1.setFontAndSize(baseFont, 22);
+//        page1.setCharacterSpacing(-2);
+
+        PdfContentByte page1 = stamper.getOverContent(1);
+        //将文字贴入pdf
+        page1.beginText();
+        page1.setFontAndSize(baseFont, 14);
+        page1.setColorFill(color);
+
+        // 填充中文
+        page1.setTextMatrix(245, 282.5f);
+        page1.showText("上海鸭嘴兽供应链管理有限公司");
+
+        page1.setTextMatrix(336, 219.7f);
+        page1.showText("2021年9月11日");
+
+        page1.endText();
+
+
+        // 签名
+        Image image1 = Image.getInstance("C:\\Users\\admin\\Desktop\\temp\\pdf\\input\\b.png");
+        image1.scaleToFit(62.4f, 41.6f);
+        image1.setAbsolutePosition(335, 235);
+        page1.addImage(image1);
+
+        // 盖章
+        Image image2 = Image.getInstance("C:\\Users\\admin\\Desktop\\temp\\pdf\\input\\c.png");
+        image2.scaleToFit(155, 155);
+        image2.setAbsolutePosition(240, 185);
+        page1.addImage(image2);
 
         stamper.close();
         reader.close();
